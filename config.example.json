@@ -1,0 +1,43 @@
+{
+  "selfQQ": 123456789,
+  "ownerQQ": 987654321,
+  "formats": {
+    "execute": "执行Shell命令：\n",
+    "add": "增加 Shell 命令："
+  },
+  "commands": {
+    "回声": [
+      "echo 1",
+      "cmd"
+    ],
+    "任务完成": [
+      "New-BurntToastNotification -Text '任务完成', '文件备份已成功完成，耗时3分25秒'",
+      "PowerShell"
+    ]
+  },
+  "allowedSenders": [
+    987654321
+  ],
+  "adminSenders": [
+    987654321
+  ],
+  "allowGroup": false,
+  "napcat": {
+    "ws": "ws://127.0.0.1:3001",
+    "token": "你的 NapCat access_token",
+    "cwd": "",
+    "python": "",
+    "pythonPath": "",
+    "timeoutMs": 30000
+  },
+  "shell": {
+    "cwd": "",
+    "timeoutMs": 600000
+  },
+  "notify": {
+    "start": true,
+    "outputLines": 20,
+    "maxChars": 1800
+  },
+  "debug": false
+}

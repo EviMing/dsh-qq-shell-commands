@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "QQ Shell Commands",
+    "description": "Run Shell commands remotely from QQ instead of through DSH. Useful for repetitive or hosted work when you cannot grant DSH direct execution permission. The plugin talks to QQ through NapCat; a private message is compared for exact equality with a key in the command table, and the mapped Shell command runs on the host. Execute format: \"执行 Shell 命令：\\n文本\". Add format: \"增加 Shell 命令：\\n{\\\"文本\\\": [\\\"Shell 命令\\\", \\\"Shell to use (e.g. cmd or PowerShell)\\\"]}\". The command is executed by the host. Requires EviMing/dsh-napcat-tools."
+  }
+}

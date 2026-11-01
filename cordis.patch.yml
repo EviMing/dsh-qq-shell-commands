@@ -1,0 +1,8 @@
+- insert:
+    - id: qq-shell-commands
+      name: 'dsh-qq-shell-commands'
+      config:
+        # 留空表示 %DSH_HOME%\qq-shell-commands.json
+        configFile: ''
+        # 前置插件目录：必须包含 package.json 与 lib/runner.mjs，且 name 为 @local/napcat-tools
+        prereqDir: ''
