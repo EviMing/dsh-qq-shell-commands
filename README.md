@@ -57,7 +57,7 @@ dsh plugin --profile web add github:EviMing/dsh-qq-shell-commands
         prereqDir: 'C:\Users\you\.dsh\profiles\web\node_modules\@local\napcat-tools'
 ```
 
-`prereqDir` 必须是一个包含 `package.json` 与 `lib/runner.mjs` 的目录，且 `package.json` 的 `name` 为 `@local/napcat-tools`。
+`prereqDir` 必须是一个包含 `package.json` 与 `lib/runner.mjs` 的目录，且 `package.json` 的 `name` 为 `@local/napcat-tools`。如果两个插件装在同一个 profile，`prereqDir` 留空时会自动解析同级的 `@local/napcat-tools`；也可以设置环境变量 `NAPCAT_TOOLS_DIR`。
 
 ### 本地开发
 
