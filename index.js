@@ -14,6 +14,8 @@
  * 命令在 DSH 宿主机（当前用户）权限下运行，不经过 DSH 沙箱；配置文件的可写
  * 权限等价于命令执行权限。
  */
+import { createRequire } from 'node:module';
+import { dirname } from 'node:path';
 import { ConfigStore, resolveConfigPath } from './lib/config.mjs';
 import { CommandDispatcher } from './lib/dispatcher.mjs';
 import { NapcatNotifier, loadNapcatRunner } from './lib/napcat.mjs';
@@ -25,7 +27,25 @@ export const name = 'qq-shell-commands';
 export const inject = ['subprocess'];
 
 const TAG = '[qq-shell-commands]';
-const DEFAULT_PREREQ_DIR = '';
+const require = createRequire(import.meta.url);
+
+/**
+ * 默认前置目录：优先环境变量，其次从 profile 的 node_modules 解析
+ * @local/napcat-tools（插件市场同时安装两个插件时通常就在同级）。
+ */
+function resolveDefaultPrereqDir() {
+  const fromEnv = typeof process.env.NAPCAT_TOOLS_DIR === 'string'
+    ? process.env.NAPCAT_TOOLS_DIR.trim()
+    : '';
+  if (fromEnv) return fromEnv;
+  try {
+    return dirname(require.resolve('@local/napcat-tools/package.json'));
+  } catch {
+    return '';
+  }
+}
+
+const DEFAULT_PREREQ_DIR = resolveDefaultPrereqDir();
 const RETRY_MS = 60000;
 
 const DEFAULTS = {
