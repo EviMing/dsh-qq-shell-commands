@@ -34,7 +34,7 @@ QQ 私信「执行Shell命令：」+ 换行 +「任务完成」
 
 ### 从 DSH 插件市场安装（推荐）
 
-本仓库带有 `dsh-plugin` topic，会被 [DSH-Plugins-Marketplace](https://github.com/bradeGithub/DSH-Plugins-Marketplace) 索引。在 DSH 设置页的插件市场里搜索 **QQ Shell 命令** 即可安装。
+本仓库带有 `dsh-plugin` topic，会被 [DSH-Plugins-Marketplace](https://github.com/bradeGithub/DSH-Plugins-Marketplace) 索引；收录后也会出现在 dshmarket 的精选列表。在 DSH 插件市场搜索 **QQ Shell** 或 **dsh-qq-shell-commands** 即可找到。
 
 ### 从 GitHub 安装
 
